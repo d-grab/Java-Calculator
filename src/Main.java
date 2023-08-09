@@ -1,17 +1,76 @@
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
+import java.io.*;
+import java.lang.*;
+import java.lang.Math;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-        //first push
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        double num1, num2;
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        // Take input from the user
+        Scanner sc = new Scanner(System.in);
+
+        // Loop to get valid input for num1
+        while (true) {
+            System.out.println("Enter the first number:");
+            try {
+                num1 = sc.nextDouble();
+                break; // Break the loop if valid input is provided
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+                sc.next(); // Clear the input buffer
+            }
         }
+
+        // Loop to get valid input for num2
+        while (true) {
+            System.out.println("Enter the second number:");
+            try {
+                num2 = sc.nextDouble();
+                break; // Break the loop if valid input is provided
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+                sc.next(); // Clear the input buffer
+            }
+        }
+        System.out.println("Enter the operator (+,-,*,/):");
+
+        char op = sc.next().charAt(0);
+        double o = 0;
+
+        switch (op) {
+            // case to add two numbers
+            case '+':
+                o = num1 + num2;
+                break;
+
+            // case to subtract two numbers
+            case '-':
+                o = num1 - num2;
+                break;
+
+            // case to multiply two numbers
+            case '*':
+                o = num1 * num2;
+                break;
+
+            // case to divide two numbers
+            case '/':
+                o = num1 / num2;
+                break;
+
+            default:
+                System.out.println("You enter wrong input");
+        }
+
+        System.out.println("The final result:");
+        System.out.println();
+
+        // print the final result
+        System.out.println(num1 + " " + op + " " + num2
+                + " = " + o);
     }
 }
+
+
