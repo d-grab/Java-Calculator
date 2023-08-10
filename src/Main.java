@@ -1,8 +1,7 @@
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
-import java.io.*;
+
 import java.lang.*;
-import java.lang.Math;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +9,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
 // Creating object of Calculation class
-        Calculation calculator = new Calculation();
+       // Calculation calculator = new Calculation();
         ScannerInput scInput = new ScannerInput();
 
         double firstNum = scInput.getInput(sc,"Enter First number");
