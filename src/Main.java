@@ -14,7 +14,7 @@ public class Main {
         ScannerInput scInput = new ScannerInput();
 
         double firstNum = scInput.getInput(sc,"Enter First number");
-        double secondNum = scInput.getInput(sc, "Enter second number");
+        double secondNum = scInput.getInput(sc, "Enter second number.");
 
 // Checking if the input is Correct
         System.out.println("You entered:");
