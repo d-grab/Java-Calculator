@@ -19,7 +19,7 @@ public class Main {
         System.out.println("You entered:");
         System.out.println("Number 1: " + firstNum);
         System.out.println("Number 2: " + secondNum);
-        System.out.println("Number 2: " + secondNum);
+
 
 
 
