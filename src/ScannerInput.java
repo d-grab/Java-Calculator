@@ -3,9 +3,6 @@ import java.util.Scanner;
 
 public class ScannerInput {
 
-    public ScannerInput() {
-    }
-
     public double getInput(Scanner scanner, String prompt) {
         double input = 0.0;
 
