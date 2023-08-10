@@ -56,7 +56,6 @@ public class Main {
             double result = calc.performCalculation(firstNum, secondNum, operator);
             System.out.println("The final result:");
             System.out.println(firstNum + " " + operator + " " + secondNum + " = " + result);
-
          }}
 
 
