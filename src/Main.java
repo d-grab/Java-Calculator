@@ -6,34 +6,25 @@ import java.lang.Math;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        double num1, num2;
-
-        // Take input from the user
+// Creating Scanner
         Scanner sc = new Scanner(System.in);
 
-        // Loop to get valid input for num1
-        while (true) {
-            System.out.println("Enter the first number:");
-            try {
-                num1 = sc.nextDouble();
-                break; // Break the loop if valid input is provided
-            } catch (java.util.InputMismatchException e) {
-                System.out.println("Invalid input. Please enter a valid number.");
-                sc.next(); // Clear the input buffer
-            }
-        }
+// Creating object of Calculation class
+        Calculation calculator = new Calculation();
+        ScannerInput scInput = new ScannerInput();
 
-        // Loop to get valid input for num2
-        while (true) {
-            System.out.println("Enter the second number:");
-            try {
-                num2 = sc.nextDouble();
-                break; // Break the loop if valid input is provided
-            } catch (java.util.InputMismatchException e) {
-                System.out.println("Invalid input. Please enter a valid number.");
-                sc.next(); // Clear the input buffer
-            }
-        }
+        double firstNum = scInput.getInput(sc,"Enter First number");
+        double secondNum = scInput.getInput(sc, "Enter second number");
+
+// Checking if the input is Correct
+        System.out.println("You entered:");
+        System.out.println("Number 1: " + firstNum);
+        System.out.println("Number 2: " + secondNum);
+
+
+
+
+        System.out.println("Are You sure the first number ("+num1+") and second number ("+ num2+") are correct ?");
         System.out.println("Enter the operator (+,-,*,/):");
 
         char op = sc.next().charAt(0);
