@@ -17,18 +17,14 @@ public class Main {
 // Displaying user numbers from Confirm Statement class
         statement.printingStatement(firstNum, secondNum);
 
-
-
-
         String answer = "";
-
         // Keep asking until the user enters "yes" or "no"
         while (true) {
 
             System.out.print("Are these numbers correct? (yes/no): ");
             answer = sc.next();
             if (answer.equalsIgnoreCase("Yes") || answer.equalsIgnoreCase("No")) {
-                break; // Valid operator, exit the loop
+                break; // Valid answer, exit the loop
             } else {
                 System.out.println("Invalid answer. Please answer Yes or No.");
             }
