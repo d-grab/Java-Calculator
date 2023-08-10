@@ -17,7 +17,8 @@ public class Main {
 // Displaying user numbers from Confirm Statement class
         statement.printingStatement(firstNum, secondNum);
 
-        String answer = "";
+//Declaring variable for checking purposes
+        String answer;
         // Keep asking until the user enters "yes" or "no"
         while (true) {
 
@@ -29,6 +30,7 @@ public class Main {
                 System.out.println("Invalid answer. Please answer Yes or No.");
             }
         }
+// Once the input is correct , checking conditions
         if (answer.equalsIgnoreCase("no")) {
             System.out.print("Which number do you want to change? (1-first /2-second /3=both): ");
             int numberToChange = sc.nextInt();
@@ -40,6 +42,7 @@ public class Main {
                 scInput.getInput(sc, "Enter the new value for number 1: ");
                 scInput.getInput(sc, "Enter the new value for number 2: ");
         } }
+    // Printing class to save a bit of space in code and do not repeat the same code
             statement.printingStatement(firstNum, secondNum);
             char operator;
             while (true) {
@@ -52,7 +55,7 @@ public class Main {
                     System.out.println("Invalid operator. Please enter a valid operator.");
                 }
             }
-
+// Calling calculate method form Calculation class to perform operations
             double result = calc.performCalculation(firstNum, secondNum, operator);
             System.out.println("The final result:");
             System.out.println(firstNum + " " + operator + " " + secondNum + " = " + result);
