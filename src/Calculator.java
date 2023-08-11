@@ -1,23 +1,24 @@
 import java.util.Locale;
 import java.util.Scanner;
+
 public class Calculator {
 
     public void StartCalculator () {
-        double first = 0;
-        double second = 0;
+        double first;
+        double second;
 
         System.out.println("Welcome to simple calculator");
         Scanner myObj = new Scanner(System.in);
         mathOperationsToChoose();
         String userEquationChoice = myObj.nextLine();
 
-        boolean loop = !isValidInput(userEquationChoice);
+        boolean loop = isValidInput(userEquationChoice);
 
         while(loop){
             System.out.println("Ups, something went wrong, please choose on option below");
             mathOperationsToChoose();
             userEquationChoice = myObj.nextLine();
-            loop = !isValidInput(userEquationChoice);
+            loop = isValidInput(userEquationChoice);
         }
 
         first = getFirstNumber();
@@ -40,10 +41,10 @@ public class Calculator {
     /**
      * method to get first number from user input, has simple validation for numeric value
      *
-     * @return
+     * @return returning first number
      */
     protected static double getFirstNumber() {
-        double first = 0;
+        double first;
         Scanner firstNumber = new Scanner(System.in);
         System.out.println("Please enter first number");
         if(firstNumber.hasNextDouble()){
@@ -79,14 +80,14 @@ public class Calculator {
      * @param input
      * @return
      */
-    private boolean isValidInput(String input){
-        return  MathConstants.ADDITION.equalsIgnoreCase(input) ||
-                MathConstants.SUBTRACTION.equalsIgnoreCase(input) ||
-                MathConstants.MULTIPLICATION.equalsIgnoreCase(input) ||
-                MathConstants.DIVISION.equalsIgnoreCase(input);
+    public static boolean isValidInput(String input){
+        return !"addition".equalsIgnoreCase(input) &&
+                !MathConstants.SUBTRACTION.equalsIgnoreCase(input) &&
+                !MathConstants.MULTIPLICATION.equalsIgnoreCase(input) &&
+                !MathConstants.DIVISION.equalsIgnoreCase(input);
     }
 
-    private static void checkNumbersAndCalculate(String userEquationChoice, double first, double second) {
+    public static void checkNumbersAndCalculate(String userEquationChoice, double first, double second) {
 
         Scanner userChoice = new Scanner(System.in);
         System.out.println("Are you happy with passed numbers: " + first + " " + second);
@@ -106,7 +107,7 @@ public class Calculator {
 
     }
 
-    private static void equate(String userEquationChoice, double first, double second) {
+    public static void equate(String userEquationChoice, double first, double second) {
         switch (userEquationChoice.toLowerCase(Locale.ROOT)){
             case MathConstants.ADDITION:
                 CalculatorHelper.addition(first, second);
