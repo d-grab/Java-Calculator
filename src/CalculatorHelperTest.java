@@ -24,9 +24,19 @@ class CalculatorHelperTest {
 
     @Test
     void multiplication() {
+        double first = -2.0;
+        double second = 3.0;
+
+        double result = CalculatorHelper.multiplication(first, second);
+        assertEquals(first*second, result);
     }
 
     @Test
     void division() {
+        double first = 12.0;
+        double second = 3.0;
+
+        double result = CalculatorHelper.division(first, second);
+        assertEquals(first/second, result);
     }
 }

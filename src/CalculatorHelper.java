@@ -16,8 +16,8 @@ public class CalculatorHelper {
     }
 
     public static double division(double first, double second) {
-        System.out.println(first + second);
-        return first + second;
+        System.out.println(first / second);
+        return first / second;
     }
 
 
